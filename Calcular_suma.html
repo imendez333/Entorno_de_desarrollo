@@ -30,81 +30,75 @@
 
 <div class="container">
     <div class="content">
-        <h2>Suma de dos números</h2>
+        <h2>Suma y Resta de dos números</h2>
 
-        <form>
-            <div class="input-container">
-                <label for="num1">Primer número:</label>
-                <input type="text" id="num1">
-            </div>
-            <div class="input-container">
-                <label for="num2">Segundo número:</label>
-                <input type="text" id="num2">
-            </div>
-            <input type="button" value="Calcular suma"  onclick="calcularSuma()">
-        </form>
-
-        <div id="resultado"></div>
+<form>
+    <div class="input-container">
+        <label for="num1">Primer número:</label>
+        <input type="text" id="num1">
     </div>
-</div>
+    <div class="input-container">
+        <label for="num2">Segundo número:</label>
+        <input type="text" id="num2">
+    </div>
+
+    <input type="button" value="Calcular suma" class="btn-suma" onclick="calcularSuma()">
+    <input type="button" value="Calcular resta" class="btn-resta" onclick="calcularResta()">
+</form>
+
+<div id="resultado"></div>
+
+<style>
+    .btn-suma {
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .btn-resta {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+</style>
 
 <script>
+function obtenerNumeros() {
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+    return { num1, num2 };
+}
+
 function calcularSuma() {
-    // Obtener los valores de los campos de entrada
-    var num1 = parseFloat(document.getElementById("num1").value);
-    var num2 = parseFloat(document.getElementById("num2").value);
+    var { num1, num2 } = obtenerNumeros();
 
-    // Verificar si ambos valores son números
     if (!isNaN(num1) && !isNaN(num2)) {
-        // Calcular la suma
-        var suma = num1 + num2;
-
-        // Mostrar el resultado en el elemento con id "resultado"
-        document.getElementById("resultado").innerHTML = "El resultado de la suma es: " + suma;
+        document.getElementById("resultado").innerHTML =
+            "El resultado de la suma es: " + (num1 + num2);
     } else {
-        // Mostrar un mensaje de error si los valores no son números
-        document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
+        document.getElementById("resultado").innerHTML =
+            "Por favor, ingrese dos números válidos.";
     }
 }
-</script>
 
-<h2>resta de dos números</h2>
-
-        <form>
-            <div class="input-container">
-                <label for="num1">Primer número:</label>
-                <input type="text" id="num1">
-            </div>
-            <div class="input-container">
-                <label for="num2">Segundo número:</label>
-                <input type="text" id="num2">
-            </div>
-            <input type="button" value="Calcular resta"  onclick="calcularResta()">
-        </form>
-
-        <div id="resultado"></div>
-    </div>
-</div>
-
-<script>
 function calcularResta() {
-    // Obtener los valores de los campos de entrada
-    var num1 = parseFloat(document.getElementById("num1").value);
-    var num2 = parseFloat(document.getElementById("num2").value);
+    var { num1, num2 } = obtenerNumeros();
 
-    // Verificar si ambos valores son números
     if (!isNaN(num1) && !isNaN(num2)) {
-        // Calcular la suma
-        var resta = num1 - num2;
-
-        // Mostrar el resultado en el elemento con id "resultado"
-        document.getElementById("resultado").innerHTML = "El resultado de la suma es: " + resta;
+        document.getElementById("resultado").innerHTML =
+            "El resultado de la resta es: " + (num1 - num2);
     } else {
-        // Mostrar un mensaje de error si los valores no son números
-        document.getElementById("resultado").innerHTML = "Por favor, ingrese dos números válidos.";
+        document.getElementById("resultado").innerHTML =
+            "Por favor, ingrese dos números válidos.";
     }
 }
 </script>
+
 </body>
 </html>
 
