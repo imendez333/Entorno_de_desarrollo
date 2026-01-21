@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Suma de dos números</title>
     <style>
@@ -7,99 +8,124 @@
             text-align: center;
             margin-top: 50px;
         }
+
         .content {
             display: inline-block;
             text-align: left;
         }
+
         .input-container {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
         }
+
         .input-container label {
             width: 150px;
             margin-right: 10px;
         }
+
         .input-container input[type="text"] {
             width: 150px;
         }
-		
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <div class="content">
-        <h2>Suma y Resta de dos números</h2>
+    <div class="container">
+        <div class="content">
+            <h2>Suma ,multiplicacion y Resta de dos números</h2>
 
-<form>
-    <div class="input-container">
-        <label for="num1">Primer número:</label>
-        <input type="text" id="num1">
-    </div>
-    <div class="input-container">
-        <label for="num2">Segundo número:</label>
-        <input type="text" id="num2">
-    </div>
+            <form>
+                <div class="input-container">
+                    <label for="num1">Primer número:</label>
+                    <input type="text" id="num1">
+                </div>
+                <div class="input-container">
+                    <label for="num2">Segundo número:</label>
+                    <input type="text" id="num2">
+                </div>
 
-    <input type="button" value="Calcular suma" class="btn-suma" onclick="calcularSuma()">
-    <input type="button" value="Calcular resta" class="btn-resta" onclick="calcularResta()">
-</form>
+                <input type="button" value="Calcular suma" class="btn-suma" onclick="calcularSuma()">
+                <input type="button" value="Calcular resta" class="btn-resta" onclick="calcularResta()">
+                <input type="button" value="Calcular multiplicacion" class="btn-multiplicacion" onclick="calcularMultiplicacion()">
 
-<div id="resultado"></div>
+            </form>
 
-<style>
-    .btn-suma {
-        background-color: green;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        cursor: pointer;
-        margin-right: 5px;
-    }
+            <div id="resultado"></div>
 
-    .btn-resta {
-        background-color: red;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        cursor: pointer;
-    }
-</style>
+            <style>
+                .btn-suma {
+                    background-color: green;
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    cursor: pointer;
+                    margin-right: 5px;
+                }
 
-<script>
-function obtenerNumeros() {
-    var num1 = parseFloat(document.getElementById("num1").value);
-    var num2 = parseFloat(document.getElementById("num2").value);
-    return { num1, num2 };
-}
+                .btn-resta {
+                    background-color: red;
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    cursor: pointer;
+                }
+                .btn-multiplicacion {
+                    background-color: yellow;
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    cursor: pointer;
+                    margin-right: 5px;
+                }
+            </style>
 
-function calcularSuma() {
-    var { num1, num2 } = obtenerNumeros();
+            <script>
+                function obtenerNumeros() {
+                    var num1 = parseFloat(document.getElementById("num1").value);
+                    var num2 = parseFloat(document.getElementById("num2").value);
+                    return { num1, num2 };
+                }
 
-    if (!isNaN(num1) && !isNaN(num2)) {
-        document.getElementById("resultado").innerHTML =
-            "El resultado de la suma es: " + (num1 + num2);
-    } else {
-        document.getElementById("resultado").innerHTML =
-            "Por favor, ingrese dos números válidos.";
-    }
-}
+                function calcularSuma() {
+                    var { num1, num2 } = obtenerNumeros();
 
-function calcularResta() {
-    var { num1, num2 } = obtenerNumeros();
+                    if (!isNaN(num1) && !isNaN(num2)) {
+                        document.getElementById("resultado").innerHTML =
+                            "El resultado de la suma es: " + (num1 + num2);
+                    } else {
+                        document.getElementById("resultado").innerHTML =
+                            "Por favor, ingrese dos números válidos.";
+                    }
+                }
 
-    if (!isNaN(num1) && !isNaN(num2)) {
-        document.getElementById("resultado").innerHTML =
-            "El resultado de la resta es: " + (num1 - num2);
-    } else {
-        document.getElementById("resultado").innerHTML =
-            "Por favor, ingrese dos números válidos.";
-    }
-}
-</script>
+                function calcularResta() {
+                    var { num1, num2 } = obtenerNumeros();
+
+                    if (!isNaN(num1) && !isNaN(num2)) {
+                        document.getElementById("resultado").innerHTML =
+                            "El resultado de la resta es: " + (num1 - num2);
+                    } else {
+                        document.getElementById("resultado").innerHTML =
+                            "Por favor, ingrese dos números válidos.";
+                    }
+                }
+                function calcularMultiplicacion() {
+                    var { num1, num2 } = obtenerNumeros();
+
+                    if (!isNaN(num1) && !isNaN(num2)) {
+                        document.getElementById("resultado").innerHTML =
+                            "El resultado de la multiplicacion es: " + (num1 * num2);
+                    } else {
+                        document.getElementById("resultado").innerHTML =
+                            "Por favor, ingrese dos números válidos.";
+                    }
+                }
+
+            </script>
 
 </body>
+
 </html>
-
-
