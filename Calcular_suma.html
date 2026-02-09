@@ -35,7 +35,9 @@
 
     <div class="container">
         <div class="content">
+        <h2>Suma y Resta de dos números</h2>
             <h2>Suma ,multiplicacion y Resta de dos números</h2>
+            <h2>Suma y Resta de dos números</h2>
 
             <form>
                 <div class="input-container">
@@ -50,6 +52,7 @@
                 <input type="button" value="Calcular suma" class="btn-suma" onclick="calcularSuma()">
                 <input type="button" value="Calcular resta" class="btn-resta" onclick="calcularResta()">
                 <input type="button" value="Calcular multiplicacion" class="btn-multiplicacion" onclick="calcularMultiplicacion()">
+                <input type="button" value="Calcular division" class="btn-division" onclick="calculardivision()">
 
             </form>
 
@@ -79,6 +82,13 @@
                     padding: 8px 12px;
                     cursor: pointer;
                     margin-right: 5px;
+
+                .btn-division {
+                    background-color: purple;
+                    color: white;
+                    border: none;
+                    padding: 8px 12px;
+                    cursor: pointer;
                 }
             </style>
 
@@ -124,8 +134,21 @@
                     }
                 }
 
+
+                function calculardivision() {
+                    var { num1, num2 } = obtenerNumeros();
+
+                    if (!isNaN(num1) && !isNaN(num2)) {
+                        document.getElementById("resultado").innerHTML =
+                            "El resultado de la division es: " + (num1 / num2);
+                    } else {
+                        document.getElementById("resultado").innerHTML =
+                            "Por favor, ingrese dos números válidos.";
+                    }
+                }
             </script>
 
 </body>
-
 </html>
+
+
